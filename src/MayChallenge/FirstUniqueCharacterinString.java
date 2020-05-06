@@ -1,7 +1,5 @@
 package MayChallenge;
-
 import java.util.HashMap;
-
 public class FirstUniqueCharacterinString {
     public static void main(String[] args) {
         Solution s = new Solution();
