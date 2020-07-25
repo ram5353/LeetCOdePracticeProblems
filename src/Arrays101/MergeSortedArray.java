@@ -12,28 +12,31 @@ public class MergeSortedArray {
 class Solution4 {
 
     public void merge() {
-        int[] nums1 = {0,0,0,0,0,0};
-        int[] nums2 = {2,5,6,1,2,3};
-        int j = 0;
-        int n =3, m =3;
-        int l1 = nums2.length;
-        int h = 0;
-        if (l1 == 0) {
-            return;
-        } else if (l1 == 1 && nums1.length ==1) {
-            nums1[0] = nums2[0];
-        }
-        for ( j =0;j < nums1.length;j++) {
-            if (nums1[j] == 0) {
-                break;
+        int[] nums1 = {1,2,3,0,0,0};
+        int[] nums2 = {2,5,6};
+        int m=3;
+        int n=3;
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+        while(i >= 0 && j >= 0){
+            int one = nums1[i];
+            int two = nums2[j];
+            if(one >= two){
+                nums1[k] = one;
+                k--;
+                i--;
+            }else{
+                nums1[k] = two;
+                k--;
+                j--;
             }
         }
-        System.out.println(j);
-        for (int i = j; i<nums1.length; i++) {
-            nums1[i] = nums2[h];
-            h++;
+        while(i >= 0){
+            nums1[k--] = nums1[i--];
         }
-        Arrays.sort(nums1);
-        System.out.println(Arrays.toString(nums1));
+        while(j >= 0){
+            nums1[k--] = nums2[j--];
+        }
     }
 }
