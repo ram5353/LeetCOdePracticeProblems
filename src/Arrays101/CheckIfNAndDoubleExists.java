@@ -16,9 +16,9 @@ class Solution5 {
         int[] arr = {0,0};
         System.out.println(Arrays.toString(arr));
         int number = 0;
-        for (int i=0;i<arr.length;i++) {
-            int count =0 ;
-            if (arr[i] == 0) {
+        for (int item : arr) {
+            int count = 0;
+            if (item == 0) {
                 count++;
                 if (count > 1) {
                     return true;
