@@ -11,8 +11,10 @@ public class PreOrderTraversal {
         for (int i=0;i<=10;i++) {
             obj.insert(i*10);
         }
-        System.out.println(obj.preorderTraversal(obj.root));
-        obj.preOrder(obj.root);
+//        System.out.println(obj.preorderTraversal(obj.root));
+//        obj.preOrder(obj.root);
+        System.out.println(obj.levelOrderTraversal(obj.root));
+        obj.levelOrder();
     }
 }
 
@@ -45,6 +47,42 @@ class Solution11 {
         list.addAll(preorderTraversal(root.left));
         list.addAll(preorderTraversal(root.right));
         return list;
+    }
+
+    public List<List<Integer>> levelOrderTraversal(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode presentnode = queue.remove();
+            List<Integer> list1 = new ArrayList<>();
+            list1.add(presentnode.val);
+            if (presentnode.left != null) {
+                queue.add(presentnode.left);
+                list1.add(presentnode.left.val);
+            }
+            if (presentnode.right != null) {
+                queue.add(presentnode.right);
+                list1.add(presentnode.right.val);
+            }
+            list.add(list1);
+        }
+        return list;
+    }
+
+    void levelOrder() {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode present = queue.remove();
+            System.out.print(present.val + " ");
+            if (present.left != null) {
+                queue.add(present.left);
+            }
+            if (present.right != null) {
+                queue.add(present.right);
+            }
+        }
     }
 
     public void insert(int value) {
