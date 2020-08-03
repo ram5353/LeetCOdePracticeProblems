@@ -11,8 +11,6 @@ public class PreOrderTraversal {
         for (int i=0;i<=10;i++) {
             obj.insert(i*10);
         }
-//        System.out.println(obj.preorderTraversal(obj.root));
-//        obj.preOrder(obj.root);
         System.out.println(obj.levelOrderTraversal(obj.root));
         obj.levelOrder();
     }

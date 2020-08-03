@@ -1,6 +1,5 @@
 package Arrays101;
 
-import java.util.Arrays;
 
 public class MergeSortedArray {
     public static void main(String[] args) {
