@@ -1,9 +1,6 @@
 package BinaryTree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class PreOrderTraversal {
     public static void main(String[] args) {
@@ -13,6 +10,7 @@ public class PreOrderTraversal {
         }
         System.out.println(obj.levelOrderTraversal(obj.root));
         obj.levelOrder();
+        obj.getAllElements(obj.root,obj.root);
     }
 }
 
@@ -117,4 +115,12 @@ class Solution11 {
         preOrder(node.right);
     }
 
+    public void getAllElements(TreeNode root1, TreeNode root2) {
+        List<Integer> result = preorderTraversal(root1);
+        result.addAll(preorderTraversal(root2));
+        Collections.sort(result);
+        result.forEach(System.out::println);
+
+
+    }
 }
