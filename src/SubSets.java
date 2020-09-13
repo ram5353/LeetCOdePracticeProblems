@@ -10,7 +10,7 @@ public class SubSets {
 
 class Sub {
     List<List<Integer>> output = new ArrayList();
-    int n;
+
     public void backtrack(int first, ArrayList<Integer> curr, int[] nums) {
         output.add(new ArrayList(curr));
         for (int i = first; i < nums.length; i++) {
@@ -21,7 +21,6 @@ class Sub {
     }
 
     public List<List<Integer>> subset(int[] nums) {
-        n = nums.length;
         backtrack(0, new ArrayList<Integer>(), nums);
         return output;
     }
