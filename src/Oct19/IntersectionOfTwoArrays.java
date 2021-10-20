@@ -41,7 +41,7 @@ public class IntersectionOfTwoArrays {
                 }
             }
         }
-        int[] array = arr.stream().mapToInt(i->i).toArray();
+        int[] array = arr.stream().distinct().mapToInt(i->i).toArray();
         return array;
 
     }
