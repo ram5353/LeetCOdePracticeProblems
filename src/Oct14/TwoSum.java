@@ -1,6 +1,8 @@
 package Oct14;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
     public static void main(String[] args) {
@@ -18,6 +20,19 @@ public class TwoSum {
             }
         }
         return null;
+    }
+
+    public static int[] twoSumUsingHashMap(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int s = target - nums[i];
+            if (map.containsKey(s)){
+                return new int[] {map.get(s), i};
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        return new int[]{};
     }
 
     public static int[] twoSumII(int[] nums, int target) {
