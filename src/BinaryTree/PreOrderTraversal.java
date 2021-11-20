@@ -120,7 +120,5 @@ class Solution11 {
         result.addAll(preorderTraversal(root2));
         Collections.sort(result);
         result.forEach(System.out::println);
-
-
     }
 }
