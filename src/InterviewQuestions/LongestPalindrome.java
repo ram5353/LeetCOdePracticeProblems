@@ -1,6 +1,6 @@
 package InterviewQuestions;
 
-public class MaximumProfit {
+public class LongestPalindrome {
 
 
     public static void main(String[] args) {
